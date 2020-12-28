@@ -4,20 +4,20 @@
 1.Author: Cuttlefish 需要将本脚本下载至本地进行编辑
 由于tg作者服务器资源有限，提交时经常会无响应，故手动执行，看日志内容
 2.助力码请自行订阅本库boxjs订阅，在京东云助力中进行设置，目前只写了3个账号的助力码提交。
-boxjs订阅：https://raw.githubusercontent.com/photonmang/quantumultX/master/photonmang.boxjs.json
+boxjs订阅：https://github.com/jackwong7/auto_sign/blob/main/shareCode/photonmang.boxjs.json
 3.状态码200为成功，出现其他状态码，请手工再执行一次，以免漏提交
 
 =================================Quantumultx=========================
 [task_local]
 #互助码提交
-15,20 10 1,10,20 * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/shareCode.js, tag=互助码提交
+15,20 10 1,10,20 * * https://github.com/jackwong7/auto_sign/blob/main/shareCode/shareCode.js, tag=互助码提交
 =================================Loon===================================
 [Script]
-cron "15,20 10 1,10,20 * *" script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/shareCode.js,tag=互助码提交
+cron "15,20 10 1,10,20 * *" script-path=https://github.com/jackwong7/auto_sign/blob/main/shareCode/shareCode.js,tag=互助码提交
 ===================================Surge================================
-互助码提交 = type=cron,cronexp="15,20 10 1,10,20 * *",wake-system=1,timeout=120,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/shareCode.js
+互助码提交 = type=cron,cronexp="15,20 10 1,10,20 * *",wake-system=1,timeout=120,script-path=https://github.com/jackwong7/auto_sign/blob/main/shareCode/shareCode.js
 ====================================小火箭=============================
-互助码提交 = type=cron,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/shareCode.js, cronexpr="15,20 10 1,10,20 * *", timeout=500, enable=true
+互助码提交 = type=cron,script-path=https://github.com/jackwong7/auto_sign/blob/main/shareCode/shareCode.js, cronexpr="15,20 10 1,10,20 * *", timeout=500, enable=true
 
 */
 const jsname='互助码提交'
