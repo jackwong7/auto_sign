@@ -1,7 +1,0 @@
-{
-    "name":"Cron Task",
-    "description":"薅他！",
-    "task":[
-        "15,20 10 1,10,20 * * https://github.com/jackwong7/auto_sign/blob/main/shareCode/shareCode.js, tag=互助码提交"
-    ]
-}
