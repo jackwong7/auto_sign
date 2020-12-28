@@ -2,6 +2,6 @@
     "name":"Crontab Task",
     "description":"自用",
     "task":[
-        "15,20 10 1,10,20 * * https://github.com/jackwong7/auto_sign/blob/main/shareCode/shareCode.js, tag=互助码提交"
+        "15,20 10 1,10,20 * * https://github.com/jackwong7/auto_sign/blob/main/script/shareCode.js, tag=互助码提交"
     ]
 }
