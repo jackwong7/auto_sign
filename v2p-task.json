@@ -1216,7 +1216,7 @@
       "time": "17,37 * * * *",
       "job": {
         "type": "runjs",
-        "target": "kkd.js"
+        "target": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/kkd.js"
       }
     },
     {
@@ -1225,7 +1225,7 @@
       "time": "9 10 * * *",
       "job": {
         "type": "runjs",
-        "target": "zq1.js"
+        "target": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/zq1.js"
       }
     },
     {
@@ -1234,7 +1234,7 @@
       "time": "11 10 * * *",
       "job": {
         "type": "runjs",
-        "target": "zq2.js"
+        "target": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/zq2.js"
       }
     },
     {
@@ -1243,7 +1243,7 @@
       "time": "17 * * * *",
       "job": {
         "type": "runjs",
-        "target": "huitoutiao-joy.js"
+        "target": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/huitoutiao-joy.js"
       }
     }
   ]
