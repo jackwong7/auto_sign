@@ -431,7 +431,7 @@ function iosrule() {
         if (isSurge) return $persistentStore.write(value, key)
     }
     const read = (key) => {
-        $.getdata(key);
+        return $.getdata(key);
         if (isQuanX) return $prefs.valueForKey(key)
         if (isSurge) return $persistentStore.read(key)
     }
