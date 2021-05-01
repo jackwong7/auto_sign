@@ -1222,7 +1222,7 @@
     {
       "name": "淘优购",
       "type": "cron",
-      "time": "10 9 * * *",
+      "time": "45 8 * * *",
       "job": {
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/age174/-/main/tyg.js"
