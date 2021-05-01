@@ -1227,6 +1227,15 @@
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/age174/-/main/tyg.js"
       }
+    },
+    {
+      "name": "开心花园",
+      "type": "cron",
+      "time": "*/30 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/kxhy.js"
+      }
     }
   ]
 }
