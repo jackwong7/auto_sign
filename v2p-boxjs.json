@@ -1,0 +1,18 @@
+{
+  "id": "joy.app.sub",
+  "name": "joy应用订阅",
+  "author": "@joy",
+  "icon": "",
+  "repo": "https://github.com/jackwong7/auto_sign",
+  "apps": [
+    {
+      "id": "huitoutiao-joy",
+      "name": "小小影视",
+      "keys": ["htt_dongfangname","htt_videoname","htt_smvideoname","htt_signurlckname","htt_signbdname"],
+      "author": "@joy",
+      "repo": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/huitoutiao-joy.js",
+      "script": "https://github.com/jackwong7/auto_sign",
+      "icons": []
+    }
+  ]
+}
