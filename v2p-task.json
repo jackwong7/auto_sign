@@ -1099,7 +1099,7 @@
       "time": "*/30 6-20 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/baidu_speed.js"
+        "target": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/bdjsb-joy.js"
       }
     },
     {
