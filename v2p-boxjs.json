@@ -8,7 +8,7 @@
     {
       "id": "huitoutiao-joy",
       "name": "惠头条",
-      "keys": ["htt_dongfangname","htt_videoname","htt_smvideoname","htt_signurlckname","htt_signbdname"],
+      "keys": ["htt_dongfangnameA","htt_videonameA","htt_smvideonameA","htt_signurlcknameA","htt_signbdnameA"],
       "author": "@joy",
       "repo": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/huitoutiao-joy.js",
       "script": "https://github.com/jackwong7/auto_sign",
