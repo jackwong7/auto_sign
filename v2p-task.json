@@ -1141,7 +1141,7 @@
     {
       "name": "中青看点",
       "type": "cron",
-      "time": "0 9 * * *",
+      "time": "3 5-23 * * *",
       "job": {
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth.js"
