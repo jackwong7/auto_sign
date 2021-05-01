@@ -319,8 +319,8 @@ $iosrule.write("iosrule"+loon,"iosrule")
 
 
   !(async () => {
- 
-    
+
+
     await htt_read_dongfang();
     await $.wait(32000);
     await htt_read_video();
@@ -426,10 +426,12 @@ function iosrule() {
         if (isSurge) $notification.post(title, subtitle, message)
     }
     const write = (value, key) => {
+        $.setdata(value,key);
         if (isQuanX) return $prefs.setValueForKey(value, key)
         if (isSurge) return $persistentStore.write(value, key)
     }
     const read = (key) => {
+        $.getdata(value,key);
         if (isQuanX) return $prefs.valueForKey(key)
         if (isSurge) return $persistentStore.read(key)
     }
