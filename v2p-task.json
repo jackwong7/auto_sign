@@ -1027,7 +1027,7 @@
       "time": "20 9 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/huitoutiao-joy.js"
+        "target": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/tieba-joy.js"
       }
     },
     {
