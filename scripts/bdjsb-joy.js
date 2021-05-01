@@ -379,7 +379,7 @@ function activeBox() {
             headers: {
                 Cookie: cookieval,
                 'User-Agent': UA,
-                Referer: RefererUrl
+                'Referer': RefererUrl
             }
         }
         $.get(actboxurl, async(error, resp, data)=>{
