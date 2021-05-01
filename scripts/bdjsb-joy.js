@@ -379,7 +379,7 @@ function activeBox() {
             headers: {
                 Cookie: cookieval,
                 'User-Agent': UA,
-                'Referer': RefererUrl
+                'Referer': RefererUrl?RefererUrl:''
             }
         }
         $.get(actboxurl, async(error, resp, data)=>{
@@ -413,7 +413,7 @@ function get_pkg() {
             headers: {
                 Cookie: cookieval,
                 'User-Agent': UA,
-                'Referer': RefererUrl
+                'Referer': RefererUrl?RefererUrl:''
             }
         }
         $.get(pkgurl, async(error, resp, data) =>{
@@ -441,7 +441,7 @@ function finishTask() {
             headers: {
                 Cookie: cookieval,
                 'User-Agent': UA,
-                'Referer': RefererUrl
+                'Referer': RefererUrl?RefererUrl:''
             }
         }
         $.get(actboxurl, async(error, resp, data) =>{
