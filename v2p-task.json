@@ -1245,6 +1245,15 @@
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/huitoutiao-joy.js"
       }
+    },
+    {
+      "name": "抖音极速版-joy",
+      "type": "cron",
+      "time": "*/7 * * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/dyjsb-joy.js"
+      }
     }
   ]
 }
