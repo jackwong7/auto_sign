@@ -13,6 +13,15 @@
       "repo": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/huitoutiao-joy.js",
       "script": "https://github.com/jackwong7/auto_sign",
       "icons": []
+    },
+    {
+      "id": "zhongqingkankan-joy",
+      "name": "中青看看赚",
+      "keys": ["youth_banner"],
+      "author": "@joy",
+      "repo": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/youth_banner.js",
+      "script": "https://github.com/jackwong7/auto_sign",
+      "icons": []
     }
   ]
 }
