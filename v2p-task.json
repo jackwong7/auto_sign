@@ -1141,10 +1141,10 @@
     {
       "name": "中青看点",
       "type": "cron",
-      "time": "0 9 * * *",
+      "time": "3 5-23 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth.js"
+        "target": "https://raw.githubusercontent.com/ztxtop/x/main/youth.js"
       }
     },
     {
@@ -1226,6 +1226,15 @@
       "job": {
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/age174/-/main/tyg.js"
+      }
+    },
+    {
+      "name": "开心花园",
+      "type": "cron",
+      "time": "*/30 * * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/kxhy.js"
       }
     }
   ]
