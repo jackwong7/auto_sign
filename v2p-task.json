@@ -1236,6 +1236,15 @@
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/kxhy.js"
       }
+    },
+    {
+      "name": "京东疯狂的joy挂机",
+      "type": "cron",
+      "time": "*/10 * * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://jdsharedresourcescdn.azureedge.net/jdresource/jd_crazy_joy_coin.js"
+      }
     }
   ]
 }
