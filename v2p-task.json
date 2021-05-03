@@ -1157,15 +1157,6 @@
       }
     },
     {
-      "name": "惠头条",
-      "type": "cron",
-      "time": "*/17 * * * *",
-      "job": {
-        "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/QuantumultX/master/Scripts/HTT/htt_task_4.js"
-      }
-    },
-    {
       "name": "汽车之家极速版",
       "type": "cron",
       "time": "47 * * * *",
