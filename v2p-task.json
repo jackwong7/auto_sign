@@ -899,7 +899,7 @@
     {
       "name": "中青阅读",
       "type": "cron",
-      "time": "6 */3 * * *",
+      "time": "6 6-23/3 * * *",
       "job": {
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/CenBoMin/QuantumultX/master/Scripts/Youth/Youth_AutoRead.js"
