@@ -1263,6 +1263,15 @@
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/ryhy.js"
       }
+    },
+    {
+      "name": "考状元娶老婆",
+      "type": "cron",
+      "time": "*/5 * * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/age174/-/main/qlp.js"
+      }
     }
   ]
 }
