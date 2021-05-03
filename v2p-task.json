@@ -185,15 +185,6 @@
       }
     },
     {
-      "name": "5G超级盲盒",
-      "type": "cron",
-      "time": "3 0,1-23/3 * * *",
-      "job": {
-        "type": "runjs",
-        "target": "https://jdsharedresourcescdn.azureedge.net/jdresource/jd_mohe.js"
-      }
-    },
-    {
       "name": "城城分现金",
       "type": "cron",
       "time": "12 2 19-24 3 *",
@@ -488,7 +479,8 @@
       "job": {
         "type": "runjs",
         "target": "https://qxzy.top/rules/QuantumultX/js/zy/dyjsb.js"
-      }
+      },
+      "running": false
     },
     {
       "name": "抖音火山版",
