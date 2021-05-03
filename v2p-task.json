@@ -1245,6 +1245,15 @@
         "type": "runjs",
         "target": "https://jdsharedresourcescdn.azureedge.net/jdresource/jd_crazy_joy_coin.js"
       }
+    },
+    {
+      "name": "大公会",
+      "type": "cron",
+      "time": "36 8 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/age174/-/main/dgh.js"
+      }
     }
   ]
 }
