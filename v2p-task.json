@@ -1254,6 +1254,15 @@
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/age174/-/main/dgh.js"
       }
-    }
+    },
+    {
+      "name": "如意花园",
+      "type": "cron",
+      "time": "*/15 * * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/ryhy.js"
+      }
+    ｝
   ]
 }
