@@ -1317,7 +1317,7 @@
       "time": "0 1,20,21 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_new.j"
+        "target": "https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_new.js"
       }
     },
     {

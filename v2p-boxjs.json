@@ -102,6 +102,15 @@
       "repo": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/youth_banner.js",
       "script": "https://github.com/jackwong7/auto_sign",
       "icons": []
+    },
+    {
+      "id": "zhongqingkankan-joy",
+      "name": "京东到家passerby-b",
+      "keys": ["jddj_cookies"],
+      "author": "@joy",
+      "repo": "",
+      "script": "https://github.com/jackwong7/auto_sign",
+      "icons": []
     }
   ]
 }
