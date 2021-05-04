@@ -1312,33 +1312,6 @@
       }
     },
     {
-      "name": "抖音抖一抖红包",
-      "type": "cron",
-      "time": "*/60 * * * *",
-      "job": {
-        "type": "runjs",
-        "target": "http://nm66.top/dydhb.js"
-      }
-    },
-    {
-      "name": "抖音抖一抖",
-      "type": "cron",
-      "time": "*/1 * * * *",
-      "job": {
-        "type": "runjs",
-        "target": "http://nm66.top/dyd.js"
-      }
-    },
-    {
-      "name": "滴滴出行zz",
-      "type": "cron",
-      "time": "0 1,20,21 * * *",
-      "job": {
-        "type": "runjs",
-        "target": "https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_new.j"
-      }
-    },
-    {
       "name": "滴滴出行zZPiglet",
       "type": "cron",
       "time": "0 1,20,21 * * *",

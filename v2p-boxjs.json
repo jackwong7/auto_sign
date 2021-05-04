@@ -102,15 +102,6 @@
       "repo": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/youth_banner.js",
       "script": "https://github.com/jackwong7/auto_sign",
       "icons": []
-    },
-    {
-      "id": "douyin-joy",
-      "name": "抖一抖dou1dou",
-      "keys": ["rwurl","rwhd","rwurl2","rwhd2"],
-      "author": "@joy",
-      "repo": "http://nm66.top/dyd.js",
-      "script": "https://github.com/jackwong7/auto_sign",
-      "icons": []
     }
   ]
 }
