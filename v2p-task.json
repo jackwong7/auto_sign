@@ -1337,6 +1337,15 @@
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_sleep.js"
       }
+    },
+    {
+      "name": "闪挣",
+      "type": "cron",
+      "time": "6 * * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/age174/-/main/sz.js"
+      }
     }
   ]
 }
