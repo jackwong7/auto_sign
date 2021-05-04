@@ -1347,6 +1347,15 @@
         "target": "https://raw.githubusercontent.com/age174/-/main/sz.js"
       },
       "running": false
+    },
+    {
+      "name": "柠檬开心大丰收",
+      "type": "cron",
+      "time": "*/10 * * * *",
+      "job": {
+        "type": "runjs",
+        "target": "http://nm66.top/kxdfs.js"
+      }
     }
   ]
 }
