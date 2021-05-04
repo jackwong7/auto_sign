@@ -1345,8 +1345,7 @@
       "job": {
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/age174/-/main/sz.js"
-      },
-      "running": false
+      }
     },
     {
       "name": "柠檬开心大丰收",
