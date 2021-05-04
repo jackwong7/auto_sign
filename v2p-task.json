@@ -1345,7 +1345,8 @@
       "job": {
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/age174/-/main/sz.js"
-      }
+      },
+      "running": false
     }
   ]
 }
