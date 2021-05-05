@@ -11,7 +11,7 @@
       "time": "0 0 0/3 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/xl2101200/-/main/wgc.js"
+        "target": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/wgc-joy.js"
       }
     },
     {

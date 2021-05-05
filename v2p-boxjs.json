@@ -111,6 +111,15 @@
       "repo": "",
       "script": "https://github.com/jackwong7/auto_sign",
       "icons": []
+    },
+    {
+      "id": "wgc-joy",
+      "name": "wgc",
+      "keys": ["wgcurl","wgchd","wgcbody"],
+      "author": "@joy",
+      "repo": "",
+      "script": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/wgc-joy.js",
+      "icons": []
     }
   ]
 }
