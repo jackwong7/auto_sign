@@ -4,6 +4,15 @@
   "desc": "",
   "date": "2021-04-30 17:04:22",
   "list": [
+
+    {
+      "name": "WGC",
+      "type": "cron",
+      "time": "0 0 0/3 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/xl2101200/-/main/wgc.js"
+    },
     {
       "name": "幸福养鸡场",
       "type": "cron",
