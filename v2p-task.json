@@ -4,16 +4,6 @@
   "desc": "",
   "date": "2021-04-30 17:04:22",
   "list": [
-
-    {
-      "name": "WGC",
-      "type": "cron",
-      "time": "0 0 0/3 * * *",
-      "job": {
-        "type": "runjs",
-        "target": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/wgc-joy.js"
-      }
-    },
     {
       "name": "幸福养鸡场",
       "type": "cron",
