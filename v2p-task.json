@@ -12,6 +12,7 @@
       "job": {
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/xl2101200/-/main/wgc.js"
+      }
     },
     {
       "name": "幸福养鸡场",
@@ -20,7 +21,6 @@
       "job": {
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/age174/-/main/xfyjc.js"
-      }
       }
     },
     {
