@@ -5,6 +5,15 @@
   "date": "2021-04-30 17:04:22",
   "list": [
     {
+      "name": "WGC",
+      "type": "cron",
+      "time": "0 0 0/3 * * *",
+      "job": {
+        "type": "exec",
+        "target": "curl --noproxy \"*\" -X GET -H \"User-Agent: STC/1.0 (iPhone; iOS 14.5.1; Scale/3.00)\" -H \"Cookie: aliyungf_tc=e75b32cb9aa4727556fe8f73791d87a67929216a87a0578479641df09aa84fa9\" -H \"Host: stc.enjoyha.com\" -H \"token: 2c5b8600-48c1-4201-b36d-4288d0c8ca5a\" \"http://stc.enjoyha.com/api/miner/mining/receive_award?\""
+      }
+    },
+    {
       "name": "幸福养鸡场",
       "type": "cron",
       "time": "*/10 0-23 * * *",
