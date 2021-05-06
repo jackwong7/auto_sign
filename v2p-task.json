@@ -7,7 +7,7 @@
     {
       "name": "火狐看看",
       "type": "cron",
-      "time": "2 0 * * * ",
+      "time": "20 9 * * * ",
       "job": {
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/xl2101200/-/main/hhkk.js"
