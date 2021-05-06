@@ -5,6 +5,15 @@
   "date": "2021-04-30 17:04:22",
   "list": [
     {
+      "name": "火狐看看",
+      "type": "cron",
+      "time": "2 0 * * * ",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/xl2101200/-/main/hhkk.js"
+      }
+    },
+    {
       "name": "柠檬富豪小镇",
       "type": "cron",
       "time": "*/10 * * * *",
