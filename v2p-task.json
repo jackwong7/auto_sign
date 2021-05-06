@@ -5,6 +5,15 @@
   "date": "2021-04-30 17:04:22",
   "list": [
     {
+      "name": "幸运大转盘",
+      "type": "cron",
+      "time": "8 9 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://jdsharedresourcescdn.azureedge.net/jdresource/jd_market_lottery.js"
+      }
+    },
+    {
       "name": "WGC",
       "type": "cron",
       "time": "0 0 0/3 * * *",
