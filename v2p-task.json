@@ -19,7 +19,7 @@
       "time": "30 10 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/ZCY01/daily_scripts/main/jd/jd_try.js"
+        "target": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/jd_try-joy.js"
       }
     },
     {
