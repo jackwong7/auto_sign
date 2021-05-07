@@ -269,6 +269,59 @@ htt_msg(result1+"\n"+result2+"\n");
  }
 
 
+function htt_shipin_shouqu() {
+console.log('开始获取视频任务奖励列表')
+    let infourl = {
+        url: "https://api.cashtoutiao.com/frontend/scholarship/video/task/info?" + htt_signurlck,
+        headers: {
+            "Content-Type": "application/json",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"
+        },
+        timeout: 60
+    };
+
+    $iosrule.post(infourl, function (error, response, data) {
+
+        var info = JSON.parse(data)
+
+        if (info.statusCode == 200) {
+            for (var val in info.taskList){
+                valObj = info.taskList[val]
+                if (valObj.state == 2){
+                    //可以收取
+                    htt_draw(valObj.taskId)
+                }
+            }
+        } else {
+            console.log('获取视频任务奖励列表🌚')
+        }
+    })
+}
+
+function htt_draw(taskId){
+    console.log('开始领取视频奖励')
+    let drawurl = {
+        url: "https://api.cashtoutiao.com/frontend/scholarship/video/task/draw?" + htt_signurlck + "&taskId="+ taskId,
+        headers: {
+            "Content-Type": "application/json",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"
+        },
+        timeout: 60
+    };
+
+    $iosrule.post(drawurl, function (error, response, data) {
+
+        var draw = JSON.parse(data)
+
+        if (draw.statusCode == 200) {
+            console.log('领取视频奖励成功🎉,数量:'+draw.credit)
+        } else {
+            console.log('领取视频奖励🌚')
+        }
+    })
+}
+
+
 
 
 
@@ -320,7 +373,7 @@ $iosrule.write("iosrule"+loon,"iosrule")
 
   !(async () => {
 
-
+await htt_shipin_shouqu();
     await htt_read_dongfang();
     await $.wait(32000);
     await htt_read_video();
