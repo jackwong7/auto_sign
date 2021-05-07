@@ -377,12 +377,14 @@ $iosrule.write("iosrule"+loon,"iosrule")
   !(async () => {
 
 await htt_shipin_shouqu();
+      await $.wait(10000);
     await htt_read_dongfang();
     await $.wait(32000);
     await htt_read_video();
 
       await $.wait(63000);
     await htt_read_smvideo();
+      await $.wait(10000);
   })()
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
