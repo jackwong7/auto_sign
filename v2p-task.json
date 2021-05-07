@@ -1352,7 +1352,7 @@
       "time": "*/5 * * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/age174/-/main/qlp.js"
+        "target": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/qlp-joy.js"
       }
     },
     {
