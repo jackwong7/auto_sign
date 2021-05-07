@@ -385,16 +385,22 @@ $iosrule.write("iosrule"+loon,"iosrule")
   !(async () => {
 
 await htt_shipin_shouqu();
+console.log('休息10秒');
       await $.wait(10000);
     await htt_read_dongfang();
-    await $.wait(32000);
+      console.log('休息32秒');
+
+      await $.wait(32000);
     await htt_read_video();
 
+      console.log('休息63秒');
       await $.wait(63000);
       for (i=0;i<10;i++){
+          console.log('休息1秒');
           $.wait(1000);
           await htt_read_smvideo();
       }
+      console.log('休息10秒');
       await $.wait(10000);
   })()
     .catch((e) => $.logErr(e))
