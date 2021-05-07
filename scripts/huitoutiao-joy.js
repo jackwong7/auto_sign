@@ -301,10 +301,13 @@ console.log('开始获取视频任务奖励列表')
 function htt_draw(taskId){
     console.log('开始领取视频奖励')
     let drawurl = {
-        url: "https://api.cashtoutiao.com/frontend/scholarship/video/task/draw?" + htt_signurlck + "&taskId="+ taskId,
+        url: "https://api.cashtoutiao.com/frontend/scholarship/video/task/draw?" + htt_signurlck,
         headers: {
             "Content-Type": "application/json",
             "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"
+        },
+        body: {
+            "taskId":taskId
         },
         timeout: 60
     };
