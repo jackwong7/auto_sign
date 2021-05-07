@@ -182,9 +182,9 @@ function htt_read_dongfang()
    var result1="【阅读奖励】";var result2="";
 var tt=huitoutiao;
     const llUrl1 = {url:"https://api.cashtoutiao.com/frontend/read/sych/duration?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:htt_find(htt_dongfang),timeout:60};
-
+      console.log("开始阅读")
  $iosrule.post(llUrl1, function(error, response, data) {
-      if(log==1)console.log("阅读"+data)
+
     var obj=JSON.parse(data)
 
    if(obj.statusCode==200)
@@ -200,7 +200,9 @@ else
 
    htt_msg(result1+"\n"+result2+"\n");}
    })
- }
+      console.log('阅读结束')
+
+  }
 
 
 
@@ -212,9 +214,8 @@ var tt=huitoutiao;
 
 
     const llUrl1 = {url:"https://api.cashtoutiao.com/frontend/read/sych/duration?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:htt_find(htt_video),timeout:60};
-
+console.log('开始看视频')
  $iosrule.post(llUrl1, function(error, response, data) {
-      if(log==1)console.log("视频"+data)
     var obj=JSON.parse(data)
 
    if(obj.statusCode==200)
@@ -234,7 +235,9 @@ result2="请求失败*";
 htt_msg(result1+"\n"+result2+"\n");
 
    })
- }
+      console.log('看视频结束')
+
+  }
 
 
 function htt_read_smvideo()
@@ -244,9 +247,9 @@ var tt=huitoutiao;
 
 
     const llUrl1 = {url:"https://api.cashtoutiao.com/frontend/scholarship/video/sych/duration?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:htt_find(htt_smvideo),timeout:60};
-
+console.log('开始看小视频')
  $iosrule.post(llUrl1, function(error, response, data) {
-   if(log==1)console.log("小视频"+data)
+
     var obj=JSON.parse(data)
 
    if(obj.statusCode==200)
@@ -266,7 +269,9 @@ result2="请求失败*";
 htt_msg(result1+"\n"+result2+"\n");
 
    })
- }
+      console.log('看小视频结束')
+
+  }
 
 
 function htt_shipin_shouqu() {
@@ -296,6 +301,7 @@ console.log('开始获取视频任务奖励列表')
             console.log('获取视频任务奖励列表🌚')
         }
     })
+    console.log('获取视频任务奖励列表结束')
 }
 
 function htt_draw(taskId){
@@ -354,7 +360,9 @@ var tt=huitoutiao;
 
 
 function htt_msg(r)
-{var tt=huitoutiao;
+{
+    return true;
+    var tt=huitoutiao;
   htt_num++;htt_result+=r;
   if(log==1)console.log(htt_num)
  if(htt_num==7)
