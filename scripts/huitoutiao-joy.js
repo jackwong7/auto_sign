@@ -182,9 +182,6 @@ async function htt_read_dongfang()
 
       return new Promise((resolve) => {
 
-
-          var result1="【阅读奖励】";var result2="";
-          var tt=huitoutiao;
           const llUrl1 = {url:"https://api.cashtoutiao.com/frontend/read/sych/duration?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:htt_find(htt_dongfang),timeout:60};
           console.log("🔔开始阅读")
 
