@@ -243,7 +243,7 @@ function htt_read_smvideo()
 var tt=huitoutiao;
 
 
-    const llUrl1 = {url:"https://api.cashtoutiao.com/frontend/read/sych/duration?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:htt_find(htt_smvideo),timeout:60};
+    const llUrl1 = {url:"https://api.cashtoutiao.com/frontend/scholarship/video/sych/duration?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:htt_find(htt_smvideo),timeout:60};
 
  $iosrule.post(llUrl1, function(error, response, data) {
    if(log==1)console.log("小视频"+data)
