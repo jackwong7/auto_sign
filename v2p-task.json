@@ -572,6 +572,16 @@
       }
     },
     {
+      "name": "阅友小说",
+      "type": "cron",
+      "time": "12 8 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/age174/-/main/yyxs.js"
+      },
+      "running": false
+    },
+    {
       "name": "抖音极速版",
       "type": "cron",
       "time": "40 * * * *",
