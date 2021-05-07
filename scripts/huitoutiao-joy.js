@@ -177,154 +177,199 @@ result2=res+"  ✍🏻️[签到天数]"+obj.day;
 
 
 
-function htt_read_dongfang()
+async function htt_read_dongfang()
   {
-   var result1="【阅读奖励】";var result2="";
-var tt=huitoutiao;
-    const llUrl1 = {url:"https://api.cashtoutiao.com/frontend/read/sych/duration?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:htt_find(htt_dongfang),timeout:60};
-      console.log("🔔开始阅读")
- $iosrule.post(llUrl1, function(error, response, data) {
 
-    var obj=JSON.parse(data)
+      return new Promise((resolve) => {
 
-   if(obj.statusCode==200)
-   {if(data.indexOf("失败")<0)
-{console.log("阅读成功🎉");result2="💰[金币]"+obj.incCredit+" [今日阅读时长]"+formatSeconds(obj.todayDuration);}
-else
-{
-  result2=obj.msg;
-  if(result2.indexOf("稍后")>0)
-  result2="阅读间隔不达标，自动跳过。✌🏻️";
-  result1="【阅读奖励失败】"
-}
 
-   htt_msg(result1+"\n"+result2+"\n");}
-   })
-      console.log('阅读结束')
+          var result1="【阅读奖励】";var result2="";
+          var tt=huitoutiao;
+          const llUrl1 = {url:"https://api.cashtoutiao.com/frontend/read/sych/duration?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:htt_find(htt_dongfang),timeout:60};
+          console.log("🔔开始阅读")
 
+          $.post(llUrl1, async (err, resp, data) => {
+
+              try {
+
+                  var obj=JSON.parse(data)
+
+                  if(obj.statusCode==200)
+                  {
+                      if (obj.state == 0){
+                          console.log('阅读成功🎉,金币💰[金币]'+obj.incCredit+" [今日阅读时长]"+formatSeconds(obj.todayDuration));
+                      }else{
+                          console.log('阅读失败,原因:'+obj.msg)
+                      }
+                  } else{
+                      console.log('看视频请求失败🌚')
+                  }
+
+          console.log('阅读结束')
+
+              } catch (e) {
+                  //$.logErr(e, resp);
+              } finally {
+                  resolve()
+              }
+          })
+      })
   }
 
 
 
 
-function htt_read_video()
+async function htt_read_video()
   {
-   var result1="【看视频奖励】";var result2="";
-var tt=huitoutiao;
+
+      return new Promise((resolve) => {
 
 
-    const llUrl1 = {url:"https://api.cashtoutiao.com/frontend/read/sych/duration?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:htt_find(htt_video),timeout:60};
-console.log('🔔开始看视频')
- $iosrule.post(llUrl1, function(error, response, data) {
-    var obj=JSON.parse(data)
 
-   if(obj.statusCode==200)
-   {if(data.indexOf("失败")<0)
-{console.log("看视频成功🎉");result2="💰[金币]"+obj.incCredit+" [今日看视频时长]"+formatSeconds(obj.todayDuration);
-}
-else
-{
-  result2=obj.msg;  if(result2.indexOf("稍后")>0)
-  result2="视频间隔不达标，自动跳过。✌🏻️";
-  result1="【看视频奖励失败】"
-}
+          const llUrl1 = {url:"https://api.cashtoutiao.com/frontend/read/sych/duration?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:htt_find(htt_video),timeout:60};
+          console.log('🔔开始看视频')
 
-      }
- else
-result2="请求失败*";
-htt_msg(result1+"\n"+result2+"\n");
+          $.post(llUrl1, async (err, resp, data) => {
 
-   })
-      console.log('看视频结束')
+              try {
+                  var obj=JSON.parse(data)
 
+                  if(obj.statusCode==200)
+                  {
+                      if (obj.state == 0){
+                          console.log('看视频成功🎉,金币💰[金币]'+obj.incCredit+" [今日看视频时长]"+formatSeconds(obj.todayDuration));
+                      }else{
+                          console.log('看视频失败,原因:'+obj.msg)
+                      }
+
+                  }
+                  else{
+                      console.log('看视频请求失败🌚')
+
+                  }
+
+                  console.log('看视频结束')
+
+              } catch (e) {
+                  //$.logErr(e, resp);
+              } finally {
+                  resolve()
+              }
+          })
+      })
   }
 
 
-function htt_read_smvideo()
+async function htt_read_smvideo()
   {
-   var result1="【看小视频奖励】";var result2="";
-var tt=huitoutiao;
 
 
-    const llUrl1 = {url:"https://api.cashtoutiao.com/frontend/scholarship/video/sych/duration?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:htt_find(htt_smvideo),timeout:60};
- $iosrule.post(llUrl1, function(error, response, data) {
 
-    var obj=JSON.parse(data)
+      return new Promise((resolve) => {
 
-   if(obj.statusCode==200)
-   {if(data.indexOf("失败")<0)
-{console.log("看小视频成功🎉");result2="💰[金币]"+obj.incCredit+" [今日看小视频时长]"+formatSeconds(obj.todayDuration);
-}
-else
-{
-  result2=obj.msg;  if(result2.indexOf("稍后")>0)
-  result2="小视频间隔不达标，自动跳过。✌🏻️";
-  result1="【看小视频奖励失败】"
-}
 
-      }
- else
-result2="请求失败*";
-htt_msg(result1+"\n"+result2+"\n");
+          const llUrl1 = {url:"https://api.cashtoutiao.com/frontend/scholarship/video/sych/duration?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:htt_find(htt_smvideo),timeout:60};
 
-   })
 
+          $.post(llUrl1, async (err, resp, data) => {
+
+              try {
+                  var obj=JSON.parse(data)
+
+                  if(obj.statusCode==200){
+                      console.log("看小视频成功🎉");
+                  }
+                  else {
+                      console.log('看小视频请求失败🌚')
+
+                  }
+              } catch (e) {
+                  //$.logErr(e, resp);
+              } finally {
+                  resolve()
+              }
+          })
+      })
   }
 
 
-function htt_shipin_shouqu() {
-console.log('🔔开始获取视频任务奖励列表')
-    let infourl = {
-        url: "https://api.cashtoutiao.com/frontend/scholarship/video/task/info?" + htt_signurlck,
-        headers: {
-            "Content-Type": "application/json",
-            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"
-        },
-        timeout: 60
-    };
+async function htt_shipin_shouqu() {
+    return new Promise((resolve) => {
 
-    $iosrule.post(infourl, function (error, response, data) {
 
-        var info = JSON.parse(data)
+        console.log('🔔开始获取视频任务奖励列表')
+        let infourl = {
+            url: "https://api.cashtoutiao.com/frontend/scholarship/video/task/info?" + htt_signurlck,
+            headers: {
+                "Content-Type": "application/json",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"
+            },
+            timeout: 60
+        };
 
-        if (info.statusCode == 200) {
-            for (var val in info.taskList){
-                valObj = info.taskList[val]
-                if (valObj.state == 2){
-                    //可以收取
-                    htt_draw(valObj.taskId)
+        $.post(infourl, async (err, resp, data) => {
+
+            try {
+
+                var info = JSON.parse(data)
+
+                if (info.statusCode == 200) {
+                    for (var val in info.taskList){
+                        valObj = info.taskList[val]
+                        if (valObj.state == 2){
+                            //可以收取
+                            await htt_draw(valObj.taskId)
+                        }
+                    }
+                } else {
+                    console.log('获取视频任务奖励列表失败🌚')
                 }
+                console.log('获取视频任务奖励列表结束')
+
+            } catch (e) {
+                //$.logErr(e, resp);
+            } finally {
+                resolve()
             }
-        } else {
-            console.log('获取视频任务奖励列表🌚')
-        }
+        })
     })
-    console.log('获取视频任务奖励列表结束')
 }
 
-function htt_draw(taskId){
-    console.log('🔔开始领取视频奖励')
-    let drawurl = {
-        url: "https://api.cashtoutiao.com/frontend/scholarship/video/task/draw?" + htt_signurlck,
-        headers: {
-            "Content-Type": "application/json",
-            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"
-        },
-        body: {
-            "taskId":taskId
-        },
-        timeout: 60
-    };
+async function htt_draw(taskId){
+    return new Promise((resolve) => {
 
-    $iosrule.post(drawurl, function (error, response, data) {
 
-        var draw = JSON.parse(data)
+        console.log('🔔开始领取视频奖励')
+        let drawurl = {
+            url: "https://api.cashtoutiao.com/frontend/scholarship/video/task/draw?" + htt_signurlck,
+            headers: {
+                "Content-Type": "application/json",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"
+            },
+            body: {
+                "taskId":taskId
+            },
+            timeout: 60
+        };
 
-        if (draw.statusCode == 200) {
-            console.log('领取视频奖励成功🎉,数量:'+draw.credit)
-        } else {
-            console.log('领取视频奖励🌚')
-        }
+        $.post(drawurl, async (err, resp, data) => {
+
+            try {
+
+                var draw = JSON.parse(data)
+
+                if (draw.statusCode == 200) {
+                    console.log('领取视频奖励成功🎉,数量:'+draw.credit)
+                } else {
+                    console.log('领取视频奖励失败🌚')
+                }
+
+            } catch (e) {
+                //$.logErr(e, resp);
+            } finally {
+                resolve()
+            }
+        })
     })
 }
 
@@ -378,32 +423,36 @@ $iosrule.write("iosrule"+loon,"iosrule")
   }
 }
 
-
+function rand(min, max) {
+    return parseInt(Math.random() * (max - min + 1) + min, 10);
+}
 
   !(async () => {
 
 await htt_shipin_shouqu();
-console.log('休息10秒');
-      await $.wait(10000);
+let randMs = rand(10000,12000)
+console.log('休息'+randMs+'毫秒');
+      await $.wait(randMs);
     await htt_read_dongfang();
-      console.log('休息32秒');
-
-      await $.wait(32000);
+      randMs = rand(60000,70000)
+      console.log('休息'+randMs+'毫秒');
+      await $.wait(randMs);
     await htt_read_video();
-
-      console.log('休息63秒');
-      await $.wait(63000);
+      randMs = rand(60000,70000)
+      console.log('休息'+randMs+'毫秒');
+      await $.wait(randMs);
       console.log('🔔开始看小视频')
 
-      for (i=0;i<10;i++){
-          console.log('休息1秒');
-          $.wait(1000);
+      for (i=0;i<3;i++){
           await htt_read_smvideo();
+          if (i<2){
+              randMs = rand(60000,70000)
+              console.log('休息'+randMs+'毫秒');
+              await $.wait(randMs);
+          }
       }
 
       console.log('看小视频结束')
-      console.log('休息10秒');
-      await $.wait(10000);
   })()
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
