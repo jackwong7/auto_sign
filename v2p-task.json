@@ -5,6 +5,15 @@
   "date": "2021-04-30 17:04:22",
   "list": [
     {
+      "name": "食材大冲关",
+      "type": "cron",
+      "time": "37 8 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/age174/-/main/scdcg.js"
+      }
+    },
+    {
       "name": "京东店铺大转盘",
       "type": "cron",
       "time": "3 0,10,23 * * *",
