@@ -383,7 +383,10 @@ await htt_shipin_shouqu();
     await htt_read_video();
 
       await $.wait(63000);
-    await htt_read_smvideo();
+      for (i=0;i<10;i++){
+          $.wait(1000);
+          await htt_read_smvideo();
+      }
       await $.wait(10000);
   })()
     .catch((e) => $.logErr(e))
