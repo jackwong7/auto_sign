@@ -5,6 +5,60 @@
   "date": "2021-04-30 17:04:22",
   "list": [
     {
+      "name": "京东店铺大转盘",
+      "type": "cron",
+      "time": "3 0,10,23 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/sngxpro2/self/main/delete/gone/monk_shop_lottery.js"
+      }
+    },
+    {
+      "name": "京东加购有礼",
+      "type": "cron",
+      "time": "15 12 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/sngxpro2/self/main/delete/gone/monk_shop_add_to_car.js"
+      }
+    },
+    {
+      "name": "京东关注有礼",
+      "type": "cron",
+      "time": "15 15 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/sngxpro2/self/main/delete/gone/monk_shop_follow_sku.js"
+      }
+    },
+    {
+      "name": "京东美丽研究院",
+      "type": "cron",
+      "time": "1 7,12,19 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/sngxpro/QuanX/master/scripts/jd_beauty.js"
+      }
+    },
+    {
+      "name": "京东东东超市兑换奖品",
+      "type": "cron",
+      "time": "0 0 0 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://jdsharedresourcescdn.azureedge.net/jdresource/jd_blueCoin.js"
+      }
+    },
+    {
+      "name": "京东汽车兑换",
+      "type": "cron",
+      "time": "0 0 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://jdsharedresourcescdn.azureedge.net/jdresource/jd_car_exchange.js"
+      }
+    },
+    {
       "name": "幸福饭店",
       "type": "cron",
       "time": "30 10 * * *",
