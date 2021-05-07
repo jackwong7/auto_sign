@@ -182,7 +182,7 @@ function htt_read_dongfang()
    var result1="【阅读奖励】";var result2="";
 var tt=huitoutiao;
     const llUrl1 = {url:"https://api.cashtoutiao.com/frontend/read/sych/duration?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:htt_find(htt_dongfang),timeout:60};
-      console.log("开始阅读")
+      console.log("🔔开始阅读")
  $iosrule.post(llUrl1, function(error, response, data) {
 
     var obj=JSON.parse(data)
@@ -214,7 +214,7 @@ var tt=huitoutiao;
 
 
     const llUrl1 = {url:"https://api.cashtoutiao.com/frontend/read/sych/duration?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:htt_find(htt_video),timeout:60};
-console.log('开始看视频')
+console.log('🔔开始看视频')
  $iosrule.post(llUrl1, function(error, response, data) {
     var obj=JSON.parse(data)
 
@@ -247,7 +247,6 @@ var tt=huitoutiao;
 
 
     const llUrl1 = {url:"https://api.cashtoutiao.com/frontend/scholarship/video/sych/duration?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:htt_find(htt_smvideo),timeout:60};
-console.log('开始看小视频')
  $iosrule.post(llUrl1, function(error, response, data) {
 
     var obj=JSON.parse(data)
@@ -269,13 +268,12 @@ result2="请求失败*";
 htt_msg(result1+"\n"+result2+"\n");
 
    })
-      console.log('看小视频结束')
 
   }
 
 
 function htt_shipin_shouqu() {
-console.log('开始获取视频任务奖励列表')
+console.log('🔔开始获取视频任务奖励列表')
     let infourl = {
         url: "https://api.cashtoutiao.com/frontend/scholarship/video/task/info?" + htt_signurlck,
         headers: {
@@ -305,7 +303,7 @@ console.log('开始获取视频任务奖励列表')
 }
 
 function htt_draw(taskId){
-    console.log('开始领取视频奖励')
+    console.log('🔔开始领取视频奖励')
     let drawurl = {
         url: "https://api.cashtoutiao.com/frontend/scholarship/video/task/draw?" + htt_signurlck,
         headers: {
@@ -395,11 +393,15 @@ console.log('休息10秒');
 
       console.log('休息63秒');
       await $.wait(63000);
+      console.log('🔔开始看小视频')
+
       for (i=0;i<10;i++){
           console.log('休息1秒');
           $.wait(1000);
           await htt_read_smvideo();
       }
+
+      console.log('看小视频结束')
       console.log('休息10秒');
       await $.wait(10000);
   })()
