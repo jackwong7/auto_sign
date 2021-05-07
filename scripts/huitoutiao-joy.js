@@ -189,7 +189,7 @@ var tt=huitoutiao;
 
    if(obj.statusCode==200)
    {if(data.indexOf("失败")<0)
-{result2="💰[金币]"+obj.incCredit+" [今日阅读时长]"+formatSeconds(obj.todayDuration);}
+{console.log("阅读成功🎉");result2="💰[金币]"+obj.incCredit+" [今日阅读时长]"+formatSeconds(obj.todayDuration);}
 else
 {
   result2=obj.msg;
@@ -219,7 +219,7 @@ var tt=huitoutiao;
 
    if(obj.statusCode==200)
    {if(data.indexOf("失败")<0)
-{result2="💰[金币]"+obj.incCredit+" [今日看视频时长]"+formatSeconds(obj.todayDuration);
+{console.log("看视频成功🎉");result2="💰[金币]"+obj.incCredit+" [今日看视频时长]"+formatSeconds(obj.todayDuration);
 }
 else
 {
@@ -251,7 +251,7 @@ var tt=huitoutiao;
 
    if(obj.statusCode==200)
    {if(data.indexOf("失败")<0)
-{result2="💰[金币]"+obj.incCredit+" [今日看小视频时长]"+formatSeconds(obj.todayDuration);
+{console.log("看小视频成功🎉");result2="💰[金币]"+obj.incCredit+" [今日看小视频时长]"+formatSeconds(obj.todayDuration);
 }
 else
 {
@@ -327,8 +327,6 @@ $iosrule.write("iosrule"+loon,"iosrule")
 
       await $.wait(63000);
     await htt_read_smvideo();
-
-    await $.wait(32000);
   })()
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
