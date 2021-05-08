@@ -113,7 +113,7 @@ result2="重复领取.🐜";
 
 function htt_daysign()
   {
-      if ($.time("HH:mm") != "10"){
+      if ($.time("HH") != "10"){
           console.log("还未到签到时间")
           return;
       }
