@@ -33,6 +33,8 @@ const htt_signurlck=$iosrule.read(htt_signurlckname);
 
 const htt_signbdname="htt_signbdname"+httid;
 const htt_signbd=$iosrule.read(htt_signbdname)
+const htt_cashinfoname="htt_cashinfo"+httid;
+const htt_cashinfo=$iosrule.read(htt_cashinfoname)
 ;
 
 
@@ -108,51 +110,96 @@ result2="重复领取.🐜";
    })
  }
 */
-/*
 
 function htt_daysign()
   {
-   var result1="";var result2="";
-var tt=huitoutiao;
-const llUrl1 = {url:"https://api.cashtoutiao.com/frontend/sign?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:htt_signbd};var signjs=JSON.parse(htt_signbd);signjs["code"]=sign("%3Dhdfefni");
-const llUrl2 = {url:"https://api.cashtoutiao.com/frontend/invite?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:signjs};
- $iosrule.post(llUrl1, function(error, response, data) {
+      if ($.time("HH:mm") != "10:00"){
+          console.log("还未到签到时间")
+          return;
+      }
+      return new Promise((resolve) => {
+          const llUrl1 = {url:"https://api.cashtoutiao.com/frontend/sign?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:htt_signbd,timeout:60};
+          console.log("🔔开始签到")
+          $.post(llUrl1, async (err, resp, data) => {
+              try {
+                  var obj=JSON.parse(data)
+                  console.log(obj)
+                  if(obj.statusCode==200)
+                  {
+                      console.log('签到成功🎉,金币💰[金币]');
+                  } else{
+                      console.log('签到失败,原因:'+obj.msg)
+                  }
+                  console.log('签到结束')
+              } catch (e) {
+                  //$.logErr(e, resp);
+              } finally {
+                  resolve()
+              }
+          })
+      })
+  }
 
-       if(log==1) console.log(data)
-    var obj=JSON.parse(data)
-
-   if(obj.statusCode==200)
-{result2="💰[金币]"+obj.signCredit;
-htt_signday(result2);}
-else   if(obj.statusCode==-50)
-{result2="[重复签到]";
-htt_signday(result2);}})
-    $iosrule.post(llUrl2, function(error, response, data){})}
-
-
-*/
-
-//目前时段签到失效
-/*
 function htt_hoursign()
   {
-   var result1="【时段奖励】";var result2="";
-var tt=huitoutiao;
-    const llUrl1 = {url:"https://api.cashtoutiao.com/frontend/credit/sych/reward/per/hour?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:htt_signbd,timeout:60};
- $iosrule.post(llUrl1, function(error, response, data) {
-         if(log==1)console.log(data)
-    var obj=JSON.parse(data);
-   if(obj.statusCode==200)
-result2="💰[金币]"+obj.credit;
+      return new Promise((resolve) => {
+          const llUrl1 = {url:"https://api.cashtoutiao.com/frontend/credit/sych/reward/per/hour?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:htt_signbd,timeout:60};
+          console.log("🔔开始领取时段奖励")
+          $.post(llUrl1, async (err, resp, data) => {
+              try {
+                  var obj=JSON.parse(data)
+                  if(obj.statusCode==200)
+                  {
+                      console.log('领取时段奖励成功🎉,金币💰[金币]'+obj.multipleInfo.credit);
+                  } else{
+                      console.log('领取时段奖励成功失败,原因:'+obj.msg)
+                  }
+                  console.log('领取时段奖励结束')
+              } catch (e) {
+                  //$.logErr(e, resp);
+              } finally {
+                  resolve()
+              }
+          })
+      })
+  }
 
-else   if(obj.statusCode==-50)
-result2=obj.msg;
-if(result2.indexOf("频繁")>0)
-result2="重复领取🐜";
-   htt_msg(result1+"\n"+result2+"\n");
-   })
- }
-*/
+function htt_tixian()
+  {
+      if ($.time("HH:mm") != "00:00"){
+          console.log("还未到提现时间")
+          return;
+      }
+      if (!htt_cashinfo){
+          console.log("您还未获取提现cookie")
+          return;
+      }
+      return new Promise((resolve) => {
+          const llUrl1 = {url:"https://api.cashtoutiao.com/frontend/product/purchase?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:htt_cashinfo,timeout:60};
+
+          console.log("🔔开始提现")
+          $.post(llUrl1, async (err, resp, data) => {
+              try {
+                  var obj=JSON.parse(data)
+
+                  if(obj.statusCode==200 && obj.state == 0)
+                  {
+                      console.log('提现成功🎉');
+                  } else{
+                      console.log('提现失败,原因:'+obj.msg)
+                  }
+
+                  console.log('提现结束')
+
+              } catch (e) {
+                  //$.logErr(e, resp);
+              } finally {
+                  resolve()
+              }
+          })
+      })
+  }
+
 
 
 /*
@@ -426,6 +473,9 @@ function rand(min, max) {
 
   !(async () => {
 
+await htt_tixian();
+await htt_daysign();
+await htt_hoursign();
 await htt_shipin_shouqu();
 let randMs = rand(10000,12000)
 console.log('休息'+randMs+'毫秒');
