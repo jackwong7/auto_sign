@@ -35,7 +35,7 @@ const htt_signbdname="htt_signbdname"+httid;
 const htt_signbd=$iosrule.read(htt_signbdname)
 const htt_cashinfoname="htt_cashinfo"+httid;
 const htt_cashinfo=$iosrule.read(htt_cashinfoname)
-const htt_cash_amount=$iosrule.read('htt_cash_amount') | 5;
+const htt_cash_amount=$iosrule.read('htt_cash_amount') || 5;
 
 
 
