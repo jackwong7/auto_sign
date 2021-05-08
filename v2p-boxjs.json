@@ -88,11 +88,46 @@
     {
       "id": "huitoutiao-joy",
       "name": "惠头条",
-      "keys": ["htt_dongfangnameA","htt_videonameA","htt_smvideonameA","htt_signurlcknameA","htt_signbdnameA","htt_cashinfoA"],
+      "keys": ["htt_dongfangnameA","htt_videonameA","htt_smvideonameA","htt_signurlcknameA","htt_signbdnameA","htt_cashinfoA","htt_cash_amount"],
       "author": "@joy",
       "repo": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/huitoutiao-joy.js",
       "script": "https://github.com/jackwong7/auto_sign",
-      "icons": []
+      "icons": [],
+      "settings": [
+        {
+          "id": "htt_cash_amount",
+          "val": "5",
+          "name": "提现金额",
+          "type": "radios",
+          "desc": "提现金额",
+          "items": [
+            {
+              "key": "1",
+              "label": "1元"
+            },
+            {
+              "key": "5",
+              "label": "5元"
+            },
+            {
+              "key": "10",
+              "label": "10元"
+            },
+            {
+              "key": "20",
+              "label": "20元"
+            },
+            {
+              "key": "50",
+              "label": "50元"
+            },
+            {
+              "key": "100",
+              "label": "100元"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "zhongqingkankan-joy",

@@ -35,7 +35,7 @@ const htt_signbdname="htt_signbdname"+httid;
 const htt_signbd=$iosrule.read(htt_signbdname)
 const htt_cashinfoname="htt_cashinfo"+httid;
 const htt_cashinfo=$iosrule.read(htt_cashinfoname)
-;
+const htt_cash_amount=$iosrule.read('htt_cash_amount') | 5;
 
 
 
@@ -164,21 +164,14 @@ function htt_hoursign()
       })
   }
 
-function htt_tixian()
+function htt_tixian(htt_cash_id)
   {
-      if ($.time("HH") != "00"){
-          console.log("还未到提现时间")
-          return;
-      }
-      if (!htt_cashinfo){
-          console.log("您还未获取提现cookie")
-          return;
-      }
       return new Promise((resolve) => {
-          const llUrl1 = {url:"https://api.cashtoutiao.com/frontend/product/purchase?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:htt_cashinfo,timeout:60};
-
-          console.log("🔔开始提现")
-          $.post(llUrl1, async (err, resp, data) => {
+          let withdrawurl = {url:"https://api.cashtoutiao.com/frontend/product/purchase?"+htt_signurlck,headers:{"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"},body:htt_cashinfo,timeout:60};
+          withdrawurl.body = JSON.parse(withdrawurl.body)
+          withdrawurl.body['productId'] = htt_cash_id
+          console.log("🔔开始提现"+htt_cash_amount+'元')
+          $.post(withdrawurl, async (err, resp, data) => {
               try {
                   var obj=JSON.parse(data)
 
@@ -199,6 +192,56 @@ function htt_tixian()
           })
       })
   }
+
+
+function htt_get_tixian() {
+    if ($.time("HH") != "00"){
+        console.log("还未到提现时间")
+        return;
+    }
+    if (!htt_cashinfo){
+        console.log("您还未获取提现cookie")
+        return;
+    }
+    return new Promise((resolve) => {
+        let cateurl = {
+            url: "https://api.cashtoutiao.com/frontend/product/list/by/category?" + htt_signurlck,
+            headers: {
+                "Content-Type": "application/json",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"
+            },
+            body:JSON.parse(htt_signbd),
+            timeout: 60
+        };
+        cateurl.body['category'] = 1002002;
+        console.log("🔔开始获取提现列表")
+        $.post(cateurl, async (err, resp, data) => {
+            htt_cash_id=33;
+            try {
+                var obj = JSON.parse(data)
+                if (obj.statusCode == 200) {
+                    for (val in obj.productOutlineList) {
+
+                        valObj = obj.productOutlineList[val]
+                        if (valObj.originalPrice == htt_cash_amount * 100) {
+                            //可以匹配上
+                            await htt_tixian(valObj.id)
+                        }
+                    }
+                } else {
+                    console.log('获取提现列表失败,原因:' + obj.msg)
+                }
+
+                console.log('获取提现列表结束')
+
+            } catch (e) {
+                //$.logErr(e, resp);
+            } finally {
+                resolve()
+            }
+        })
+    })
+}
 
 
 
@@ -473,7 +516,7 @@ function rand(min, max) {
 
   !(async () => {
 
-await htt_tixian();
+await htt_get_tixian();
 await htt_daysign();
 await htt_hoursign();
 await htt_shipin_shouqu();
