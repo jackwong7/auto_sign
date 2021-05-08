@@ -5,6 +5,15 @@
   "date": "2021-04-30 17:04:22",
   "list": [
     {
+      "name": "疯狂森林",
+      "type": "cron",
+      "time": "37 8 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/age174/-/main/fksl.js"
+      }
+    },
+    {
       "name": "食材大冲关",
       "type": "cron",
       "time": "37 8 * * *",
