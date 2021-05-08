@@ -13,7 +13,12 @@
         "若无法通过上述方法获取 Token，可使用<a href=\"https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_ticket.js\">此脚本脚本</a>获取 Token，并按照此脚本注释进行配置。",
         "如需使用抢券功能，请设置好抢券时间，同时在抢券前运行一次脚本存储券编号，如不知如何操作请勿修改建议的 cron 设置，请参考 <a href=\"https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/README.md\">README</a> 。"
       ],
-      "keys": ["DiDi", "DiDi_city", "@Didi.drawdelay", "@Didi.actIdPM"],
+      "keys": [
+        "DiDi",
+        "DiDi_city",
+        "@Didi.drawdelay",
+        "@Didi.actIdPM"
+      ],
       "settings": [
         {
           "id": "@Didi.debug",
@@ -88,7 +93,15 @@
     {
       "id": "huitoutiao-joy",
       "name": "惠头条",
-      "keys": ["htt_dongfangnameA","htt_videonameA","htt_smvideonameA","htt_signurlcknameA","htt_signbdnameA","htt_cashinfoA","htt_cash_amount"],
+      "keys": [
+        "htt_dongfangnameA",
+        "htt_videonameA",
+        "htt_smvideonameA",
+        "htt_signurlcknameA",
+        "htt_signbdnameA",
+        "htt_cashinfoA",
+        "htt_cash_amount"
+      ],
       "author": "@joy",
       "repo": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/huitoutiao-joy.js",
       "script": "https://github.com/jackwong7/auto_sign",
@@ -132,7 +145,9 @@
     {
       "id": "zhongqingkankan-joy",
       "name": "中青看看赚",
-      "keys": ["youth_banner"],
+      "keys": [
+        "youth_banner"
+      ],
       "author": "@joy",
       "repo": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/youth_banner.js",
       "script": "https://github.com/jackwong7/auto_sign",
@@ -141,12 +156,52 @@
     {
       "id": "jddj-joy",
       "name": "京东到家-passerby-b",
-      "keys": ["jddj_cookies"],
+      "keys": [
+        "jddj_cookies"
+      ],
       "author": "@joy",
       "repo": "",
       "script": "https://github.com/jackwong7/auto_sign",
       "icons": []
     },
-    {"author":"@sunert","keys":["youth_autoread","autotime_zq"],"settings":[{"id":"youth_cut","val":false,"name":"缩减请求","type":"boolean","desc":"自动删除收益为0或者错误的阅读请求，使用完后请立即关闭，避免清空阅读请求"}],"repo":"https://github.com/Sunert/Scripts/blob/master/Task/Youth_Read.js","id":"youthRead","script":"https://raw.githubusercontent.com/Sunert/Scripts/master/Task/Youth_Read.js","name":"中青自动阅读","icons":["https://cdn.jsdelivr.net/gh/Orz-3/mini@master/Alpha/youth.png","https://cdn.jsdelivr.net/gh/Orz-3/mini@master/Color/youth.png"]}
-  ]
-}
+    {
+      "author": "@sunert",
+      "keys": [
+        "youth_autoread",
+        "autotime_zq"
+      ],
+      "settings": [
+        {
+          "id": "youth_cut",
+          "val": false,
+          "name": "缩减请求",
+          "type": "boolean",
+          "desc": "自动删除收益为0或者错误的阅读请求，使用完后请立即关闭，避免清空阅读请求"
+        }
+      ],
+      "repo": "https://github.com/Sunert/Scripts/blob/master/Task/Youth_Read.js",
+      "id": "youthRead",
+      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/Youth_Read.js",
+      "name": "中青自动阅读",
+      "icons": [
+        "https://cdn.jsdelivr.net/gh/Orz-3/mini@master/Alpha/youth.png",
+        "https://cdn.jsdelivr.net/gh/Orz-3/mini@master/Color/youth.png"
+      ]
+    },
+    {
+      "id": "sy_youth_read",
+      "name": "中青自动阅读",
+      "keys": [
+        "zqgetbody_body",
+        "zqgetbody_body1"
+      ],
+      "settings": [
+        {
+          "id": "YOUNTH_READ_Notify",
+          "name": "静默运行",
+          "val": true,
+          "type": "boolean",
+          "desc": "运行脚本时不发出系统弹窗通知"
+        }
+      ]
+    }
