@@ -39,6 +39,7 @@ const htt_signbdname = "htt_signbdname" + httid;
 const htt_videoname = "htt_videoname" + httid;
 
 const htt_smvideoname = "htt_smvideoname" + httid;
+const htt_cashinfo = "htt_cashinfo" + httid;
 
 
 //++++++++++++++++++++++++++++++++-
@@ -103,6 +104,10 @@ function htt_writeck() {
             var httbdo = $iosrule.write(md_bd, htt_smvideoname);
             if (httbdo == true)
                 papa(tt, "[小视频ck]", "写入" + tt + "小视频数据成功");
+        } else if (urlval.indexOf("frontend/product/purchase") > 0) {
+            var httbdo = $iosrule.write(md_bd, htt_cashinfo);
+            if (httbdo == true)
+                papa(tt, "[提现ck]", "写入" + tt + "提现数据成功");
         }
     }
 }
