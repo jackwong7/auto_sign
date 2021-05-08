@@ -113,7 +113,7 @@ result2="重复领取.🐜";
 
 function htt_daysign()
   {
-      if ($.time("HH:mm") != "10:00"){
+      if ($.time("HH:mm") != "10"){
           console.log("还未到签到时间")
           return;
       }
@@ -166,7 +166,7 @@ function htt_hoursign()
 
 function htt_tixian()
   {
-      if ($.time("HH:mm") != "00:00"){
+      if ($.time("HH") != "00"){
           console.log("还未到提现时间")
           return;
       }
