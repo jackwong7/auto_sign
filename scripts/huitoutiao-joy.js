@@ -666,8 +666,16 @@ function rand(min, max) {
     randMs = rand(60000, 70000)
     console.log('休息' + randMs + '毫秒');
     await $.wait(randMs);
+    for (i=0;i<3;i++){
+        await htt_read_smvideo();//看小视频
+        if (i<2){
+            randMs = rand(60000, 70000)
+            console.log('休息' + randMs + '毫秒');
+            await $.wait(randMs);
+        }
+    }
 
-    await htt_read_smvideo();//看小视频
+
 
     await htt_rerwad_statistics();//收益统计
 })()
