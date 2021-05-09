@@ -322,7 +322,7 @@
     {
       "name": "朗果英语",
       "type": "cron",
-      "time": "10-15 9 * * *",
+      "time": "10-15 9,10,11 * * *",
       "job": {
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/age174/-/main/lgyy.js"
