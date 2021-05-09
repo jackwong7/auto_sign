@@ -1046,7 +1046,7 @@
       "time": "6 6-23/3 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/QuantumultX/master/Scripts/Youth/Youth_AutoRead.js"
+        "target": "https://raw.githubusercontent.com/Sunert/Script/master/Task/Youth_Read.js"
       }
     },
     {
