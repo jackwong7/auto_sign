@@ -5,6 +5,15 @@
   "date": "2021-04-30 17:04:22",
   "list": [
     {
+      "name": "简单天气",
+      "type": "cron",
+      "time": "6 6 0-23 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://github.com/ziye888/JavaScript/raw/main/Task/jdtq.js"
+      }
+    },
+    {
       "name": "探秘无限星空",
       "type": "cron",
       "time": "15 8 9-13 5 *",
