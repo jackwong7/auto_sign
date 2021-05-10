@@ -5,6 +5,15 @@
   "date": "2021-04-30 17:04:22",
   "list": [
     {
+      "name": "探秘无限星空",
+      "type": "cron",
+      "time": "15 8 9-13 5 *",
+      "job": {
+        "type": "runjs",
+        "target": " https://raw.githubusercontent.com/monk-coder/dust/dust/car/adolf_ETIP.js"
+      }
+    },
+    {
       "name": "搜狐资讯",
       "type": "cron",
       "time": "31 31 * * * *",
