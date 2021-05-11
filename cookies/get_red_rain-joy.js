@@ -15,6 +15,7 @@ const body = $response.body;
         $.ed = act.endTime
         // await updataBody({ 'actID': $.activityId, 'st': $.st, 'et': $.ed })
         $.setdata($.activityId,'joy-jd-rain')
+        $.msg('红包雨设置成功')
     } else {
         $.msg('这个直播间没有找到红包雨', '请换个直播间尝试。')
     }
