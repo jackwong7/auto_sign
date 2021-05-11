@@ -5,6 +5,15 @@
   "date": "2021-04-30 17:04:22",
   "list": [
     {
+      "name": "京东整点京豆红包雨-joy",
+      "type": "cron",
+      "time": "0 * * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/jd_super_redrain-joy.js"
+      }
+    },
+    {
       "name": "简单天气",
       "type": "cron",
       "time": "6 6 0-23 * * *",
