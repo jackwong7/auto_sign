@@ -3,17 +3,13 @@ const body = $response.body;
 !(async () => {
     data = JSON.parse(body)
     rain = false
-    // if (data.data && data.data.iconArea) {
-    //     for (key in data.data.iconArea) {
-    //         val = data.data.iconArea[key]
-    //         if (val.type = 'platform_red_packege_rain') {
-    //             rain = val
-    //         }
-    //     }
-    // }
-    if (data.data && data.data.iconArea) { rain = data.data.iconArea.filter(vo => vo['type'] === "platform_red_packege_rain")[0] };
-    if (data.data && data.data.iconArea) { act = data.data.iconArea.filter()
-
+    if (data.data && data.data.iconArea) {
+        for (key in data.data.iconArea) {
+            val = data.data.iconArea[key]
+            if (val.type == 'platform_red_packege_rain') {
+                rain = val
+            }
+        }
     }
 
     if (rain) {
