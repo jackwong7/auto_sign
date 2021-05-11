@@ -2,17 +2,12 @@ const $ = new Env('整点京豆雨')
 const body = $response.body;
 !(async () => {
     data = JSON.parse(body)
-    if (data.data && data.data.iconArea) { rain = data.data.iconArea.filter(vo => vo['type'] === "platform_red_packege_rain")[0] };
-    if (data.data && data.data.iconArea) { act = data.data.iconArea.filter()
-
-    }
-
+    rain = false
     if (data.data && data.data.iconArea) {
-        for (key in data.data.iconArea[0].iconArea) {
-            val = data.data.iconArea[0].iconArea[key]
+        for (key in data.data.iconArea) {
+            val = data.data.iconArea[key]
             if (val.type = 'platform_red_packege_rain') {
                 rain = val
-                act = data.data.iconArea[0]
             }
         }
     }
@@ -21,8 +16,8 @@ const body = $response.body;
     if (rain) {
         let url = rain.data.activityUrl
         $.activityId = url.substr(url.indexOf("id=") + 3)
-        $.st = act.startTime
-        $.ed = act.endTime
+        $.st = rain.startTime
+        $.ed = rain.endTime
         // await updataBody({ 'actID': $.activityId, 'st': $.st, 'et': $.ed })
         $.setdata($.activityId,'joy-jd-rain')
         $.msg('红包雨设置成功')
