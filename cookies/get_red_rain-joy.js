@@ -12,17 +12,17 @@ const body = $response.body;
             val = data.data.iconArea[0].iconArea[key]
             if (val.type = 'platform_red_packege_rain') {
                 rain = val
+                act = data.data.iconArea[0]
             }
         }
-        rain = data.data.iconArea[0]
     }
 
 
     if (rain) {
         let url = rain.data.activityUrl
         $.activityId = url.substr(url.indexOf("id=") + 3)
-        $.st = rain.startTime
-        $.ed = rain.endTime
+        $.st = act.startTime
+        $.ed = act.endTime
         // await updataBody({ 'actID': $.activityId, 'st': $.st, 'et': $.ed })
         $.setdata($.activityId,'joy-jd-rain')
         $.msg('红包雨设置成功')
