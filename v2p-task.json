@@ -1376,7 +1376,7 @@
     {
       "name": "惠头条-joy",
       "type": "cron",
-      "time": "*/11 * * * *",
+      "time": "*/15 6-23 * * *",
       "job": {
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/huitoutiao-joy.js"
