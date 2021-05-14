@@ -10,7 +10,7 @@
       "time": "23 10,17 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/xpread.js"
+        "target": "xpread.js"
       }
     },
     {
