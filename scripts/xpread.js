@@ -78,12 +78,13 @@ for (let i = 2; i <= xpreadcount; i++) {
             $.indexIsFinished = false;
             $.isWait = true;
             console.log(`\n开始【笑谱阅读${$.index}】`)
-            await home()
-            await checkPackage()
-            await getConfig()
-            await signIn()
-            await sendLogNew()
-            await sendLogOur()
+            // await home()
+            // await checkPackage()
+            // await checkCash()
+            // await getConfig()
+            // await signIn()
+            // await sendLogNew()
+            // await sendLogOur()
             await newslists()
         }
     }
@@ -250,8 +251,24 @@ async function checkPackage() {
         };
         $.post(url, async (err, resp, data) => {
             try {
-                console.log(data)
                 console.log('检查成功🎉');
+            } catch (e) {
+                //$.logErr(e, resp);
+            } finally {
+                resolve()
+            }
+        })
+    })
+}
+async function checkCash() {
+    return new Promise((resolve) => {
+        let url = {
+            url: "https://lrqd.wasair.com/users/attr/cash",
+            headers: JSON.parse(xpreadCookie), timeout: 60
+        };
+        $.post(url, async (err, resp, data) => {
+            try {
+                console.log('查询余额成功🎉');
             } catch (e) {
                 //$.logErr(e, resp);
             } finally {
