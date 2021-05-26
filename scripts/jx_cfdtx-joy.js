@@ -9,8 +9,7 @@
 const $ = new Env("京喜财富岛提现");
 const JD_API_HOST = "https://m.jingxi.com/";
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
-const jdTokenNode = $.getdata('jx_tokens');//$.isNode() ? require('./jdJxncTokens.js') : '';
-console.log(process.env.jx_tokens )
+const jdTokenNode = $.isNode() ? process.env.jx_tokens : '';
 $.result = [];
 $.cookieArr = [];
 $.currentCookie = '';
