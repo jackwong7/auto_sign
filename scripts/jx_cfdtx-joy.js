@@ -4,14 +4,7 @@
 [task_local]
 #京喜财富岛提现
 0 0 * * * https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/jx_cfdtx-joy.js, tag=京喜财富岛提现, img-url=https://raw.githubusercontent.com/ChuheGit/1/main/QuantumultX/Gallery/API-Icon/jx_cfdtx.png, enabled=true
-=================================Loon===================================
-[Script]
-cron "0 0 * * *" script-path=https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/jx_cfdtx-joy.js,tag=京喜财富岛提现
-===================================Surge================================
-京喜财富岛提现 = type=cron,cronexp="0 0 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/jx_cfdtx-joy.js
-====================================小火箭=============================
-京喜财富岛提现 = type=cron,script-path=https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/jx_cfdtx-joy.js, cronexpr="0 0 * * *", timeout=3600, enable=true
- */
+*/
 
 const $ = new Env("京喜财富岛提现");
 const JD_API_HOST = "https://m.jingxi.com/";
