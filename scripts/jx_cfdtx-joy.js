@@ -9,7 +9,6 @@
 const $ = new Env("京喜财富岛提现");
 const JD_API_HOST = "https://m.jingxi.com/";
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
-const jdTokenNode = $.isNode() ? JSON.parse(process.env.jx_tokens || '[]') : '';
 $.result = [];
 $.cookieArr = [];
 $.currentCookie = '';
@@ -100,9 +99,7 @@ function getCookies() {
 
 function getTokens() {
   if ($.isNode()) {
-    Object.keys(jdTokenNode).forEach((item) => {
-      $.tokenArr.push(jdTokenNode[item] ? JSON.parse(jdTokenNode[item]) : '{}');
-    })
+    $.tokenArr = JSON.parse(process.env.jx_tokens || '[]');
   } else {
     $.tokenArr = JSON.parse($.getdata('jx_tokens') || '[]');
   }
