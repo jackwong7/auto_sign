@@ -2,6 +2,17 @@
 *
   Name:财富岛提现
   Address: 京喜App ====>>>> 全民赚大钱
+============Quantumultx===============
+[task_local]
+#京东超级盒子
+15 9 * 5,6 * https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_superbox.js, tag=京东超级盒子,  enabled=true
+================Loon==============
+[Script]
+cron "15 9 * 5,6 *" script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_superbox.js,tag=京东超级盒子
+===============Surge=================
+京东超级盒子 = type=cron,cronexp="15 9 * 5,6 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_superbox.js
+============小火箭=========
+京东超级盒子 = type=cron,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_superbox.js, cronexpr="15 9 * 5,6 *", timeout=3600, enable=true
 
  * 获取京喜tokens方式
  * 打开京喜农场，手动完成任意任务，必须完成任务领到水滴，提示获取cookie成功
