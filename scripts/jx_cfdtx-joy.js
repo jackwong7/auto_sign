@@ -8,7 +8,10 @@
  * 打开京喜工厂，收取电力，提示获取cookie成功
  * 打开京喜财富岛，手动成功提现一次，提示获取cookie成功
  * 手动任意完成，提示获取cookie成功即可，然后退出跑任务脚本
-
+  [task_local]
+  #财富岛提现
+  0 0 0 * * * https://raw.githubusercontent.com/LucaLin233/QuantumultX-Personal-Configuration/main/jx_cfdtx.js, tag=京喜财富岛提现, img-url=https://raw.githubusercontent.com/ChuheGit/1/main/QuantumultX/Gallery/API-Icon/jx_cfdtx.png, enabled=false
+  
   hostname = wq.jd.com, m.jingxi.com
 
   # quanx
