@@ -13,6 +13,7 @@
   [Script]
   cron "0 0 0 * * *" script-path=https://raw.githubusercontent.com/LucaLin233/QuantumultX-Personal-Configuration/main/jx_cfdtx.js,tag=京东超级盒子
   hostname = wq.jd.com, m.jingxi.com
+京东超级盒子 = type=cron,script-path=https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_superbox.js, cronexpr="15 9 * 5,6 *", timeout=3600, enable=true
 
   # quanx
   [rewrite_local]
