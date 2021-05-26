@@ -3,7 +3,7 @@
 =================================Quantumultx=========================
 [task_local]
 #京东试用
-30 10 * * * https://raw.githubusercontent.com/ZCY01/daily_scripts/main/jd/jd_try.js, tag=京东试用, img-url=https://raw.githubusercontent.com/ZCY01/img/master/jdtryv1.png, enabled=true
+30 10 * * * https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/jd_try-joy.js, tag=京东试用, img-url=https://raw.githubusercontent.com/ZCY01/img/master/jdtryv1.png, enabled=true
 */
 const $ = new Env('京东试用')
 
