@@ -1,41 +1,14 @@
-/**
-*
-  Name:财富岛提现
-  Address: 京喜App ====>>>> 全民赚大钱
-
- * 获取京喜tokens方式
- * 打开京喜农场，手动完成任意任务，必须完成任务领到水滴，提示获取cookie成功
- * 打开京喜工厂，收取电力，提示获取cookie成功
- * 打开京喜财富岛，手动成功提现一次，提示获取cookie成功
- * 手动任意完成，提示获取cookie成功即可，然后退出跑任务脚本
-
-  hostname = wq.jd.com, m.jingxi.com
-
-  # quanx
-  [rewrite_local]
-  ^https\:\/\/wq\.jd\.com\/cubeactive\/farm\/dotask url script-request-header https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js
-  ^https\:\/\/m\.jingxi\.com\/dreamfactory\/generator\/CollectCurrentElectricity url script-request-header https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js
-  ^https\:\/\/m\.jingxi\.com\/jxcfd\/consume\/CashOut url script-request-header https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js
-
-  # loon
-  [Script]
-  http-request ^https\:\/\/wq\.jd\.com\/cubeactive\/farm\/dotask script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js, requires-body=false, timeout=10, tag=京喜token
-  http-request ^https\:\/\/m\.jingxi\.com\/dreamfactory\/generator\/CollectCurrentElectricity script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js, requires-body=false, timeout=10, tag=京喜token
-  http-request ^^https\:\/\/m\.jingxi\.com\/jxcfd\/consume\/CashOut script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js, requires-body=false, timeout=10, tag=京喜token
-
-  # surge
-  [Script]
-  京喜token = type=http-request,pattern=^https\:\/\/wq\.jd\.com\/cubeactive\/farm\/dotask,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js
-  京喜token = type=http-request,pattern=^https\:\/\/m\.jingxi\.com\/dreamfactory\/generator\/CollectCurrentElectricity,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js
-  京喜token = type=http-request,pattern=^https\:\/\/m\.jingxi\.com\/jxcfd\/consume\/CashOut,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js
-
-*
-**/
+/*
+京喜财富岛提现
+=================================Quantumultx=========================
+[task_local]
+#京喜财富岛提现
+0 0 * * * https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/jx_cfdtx-joy.js, tag=京喜财富岛提现, img-url=https://raw.githubusercontent.com/ChuheGit/1/main/QuantumultX/Gallery/API-Icon/jx_cfdtx.png, enabled=true
+*/
 
 const $ = new Env("京喜财富岛提现");
 const JD_API_HOST = "https://m.jingxi.com/";
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
-const jdTokenNode = $.isNode() ? require('./jdJxncTokens.js') : '';
 $.result = [];
 $.cookieArr = [];
 $.currentCookie = '';
@@ -51,7 +24,7 @@ $.userName = '';
   for (let i = 0; i < $.cookieArr.length; i++) {
     $.currentCookie = $.cookieArr[i];
     $.currentToken = $.tokenArr[i];
-    if ($.currentCookie) {
+    if ($.currentCookie && $.currentToken) {
       $.userName =  decodeURIComponent($.currentCookie.match(/pt_pin=(.+?);/) && $.currentCookie.match(/pt_pin=(.+?);/)[1]);
       $.log(`\n开始【京东账号${i + 1}】${$.userName}`);
 
@@ -126,9 +99,7 @@ function getCookies() {
 
 function getTokens() {
   if ($.isNode()) {
-    Object.keys(jdTokenNode).forEach((item) => {
-      $.tokenArr.push(jdTokenNode[item] ? JSON.parse(jdTokenNode[item]) : '{}');
-    })
+    $.tokenArr = JSON.parse(process.env.jx_tokens || '[]');
   } else {
     $.tokenArr = JSON.parse($.getdata('jx_tokens') || '[]');
   }
