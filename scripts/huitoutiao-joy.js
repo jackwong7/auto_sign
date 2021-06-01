@@ -649,7 +649,12 @@ function rand(min, max) {
 }
 
 !(async () => {
-
+    if (rand(1,2) === 1){
+        $.done()
+    }
+    randMs = rand(10000, 100000)
+    console.log('休息' + randMs + '毫秒');
+    await $.wait(randMs);
     await htt_check_withdraw();//获取提现列表,去提现
     await htt_daily_task();//日常任务
     await htt_daysign_check();//签到检查,去签到
