@@ -9,7 +9,9 @@ Quantumuil X：添加远程重写
 https://gitee.com/curtinlv/qx/raw/master/rewrite/youth.conf, tag=中青 by Curtin, update-interval=172800, opt-parser=false, enabled=true
 
 中青分享一篇文章到自己的微信上，自己点击一下即触发会自动完成10好有阅读奖励 500青豆/次。
-
+[task_local]
+#自动收取中青分享奖
+15 9 * * * https://raw.githubusercontent.com/jackwong7/auto_sign/main/scripts/youthShareRead.js, tag=自动收取中青分享奖
  */
 const $ = new Env("中青分享阅读-助力10次");
 //填写 https://script.baertt.com/count2/callback 开头的url
