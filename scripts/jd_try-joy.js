@@ -422,7 +422,7 @@ async function showMsg() {
         $.msg($.name, ``, message, {
             "open-url": 'https://try.m.jd.com/user'
         })
-        await $.notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, message)
+        await $.notify.sendNotify(`${$.name} - 账号 - ${$.index} - ${$.nickName}`, message)
     } else {
         console.log(message)
     }
