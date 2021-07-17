@@ -76,20 +76,23 @@ const typeMap = {
                 await getGoodList()
             }
             await filterGoodList()
-
-            $.totalTry = 0
-            $.totalGoods = $.goodList.length
-            await tryGoodList()
-            await getSuccessList()
-
-            await showMsg()
+            doTask()
         }
     }
+    await $.wait(3600000)
 })()
     .catch((e) => {
         console.log(`❗️ ${$.name} 运行错误！\n${e}`)
     }).finally(() => $.done())
+async function doTask(){
 
+    $.totalTry = 0
+    $.totalGoods = $.goodList.length
+    await tryGoodList()
+    await getSuccessList()
+
+    await showMsg()
+}
 function requireConfig() {
     return new Promise(resolve => {
         console.log('开始获取配置文件\n')
@@ -422,7 +425,7 @@ async function showMsg() {
         $.msg($.name, ``, message, {
             "open-url": 'https://try.m.jd.com/user'
         })
-        await $.notify.sendNotify(`${$.name} - 账号 - ${$.index} - ${$.nickName}`, message)
+        await $.notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, message)
     } else {
         console.log(message)
     }
