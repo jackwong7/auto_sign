@@ -338,21 +338,21 @@ async function tryGoodList() {
     console.log(`⏰ 即将申请 ${$.goodList.length} 个商品`)
     $.running = true
     $.stopMsg = '申请完毕'
-    let isSuccess = false;
+    $.isSuccess = false;
     for (let i = 0; i < $.goodList.length && $.running; i++) {
         let good = $.goodList[i]
         if (!await canTry(good)) continue
         // 如果没有关注且关注失败
         if (good.shopId && !await isFollowed(good) && !await followShop(good)) continue
         // 两个申请间隔不能太短，放在下面有利于确保 follwShop 完成
-        isSuccess && await $.wait(1000)
+        $.isSuccess && await $.wait(1100)
         // 关注完毕，即将试用
-        await doTry(good,isSuccess)
+        await doTry(good)
     }
 }
 
-async function doTry(good,isSuccess) {
-    isSuccess = false
+async function doTry(good) {
+    $.isSuccess = false
     return new Promise((resolve, reject) => {
         $.get(taskurl(`${selfDomain}/migrate/apply?activityId=${good.id}&source=1&_s=m`, good.id), (err, resp, data) => {
             try {
@@ -362,7 +362,7 @@ async function doTry(good,isSuccess) {
                     data = JSON.parse(data)
                     if (data.success) {
                         $.totalTry += 1
-                        isSuccess = true
+                        $.isSuccess = true
                         console.log(`🥳 ${good.id} 🛒${good.trialName.substr(0,15)}🛒 ${data.message}`)
                     } else if (data.code == '-131') { // 每日300个商品
                         $.stopMsg = data.message
