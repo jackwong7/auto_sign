@@ -76,23 +76,20 @@ const typeMap = {
                 await getGoodList()
             }
             await filterGoodList()
-            doTask()
+
+            $.totalTry = 0
+            $.totalGoods = $.goodList.length
+            await tryGoodList()
+            await getSuccessList()
+
+            await showMsg()
         }
     }
-    await $.wait(3600000)
 })()
     .catch((e) => {
         console.log(`❗️ ${$.name} 运行错误！\n${e}`)
     }).finally(() => $.done())
-async function doTask(){
 
-    $.totalTry = 0
-    $.totalGoods = $.goodList.length
-    await tryGoodList()
-    await getSuccessList()
-
-    await showMsg()
-}
 function requireConfig() {
     return new Promise(resolve => {
         console.log('开始获取配置文件\n')
@@ -347,7 +344,7 @@ async function tryGoodList() {
         // 如果没有关注且关注失败
         if (good.shopId && !await isFollowed(good) && !await followShop(good)) continue
         // 两个申请间隔不能太短，放在下面有利于确保 follwShop 完成
-        await $.wait(5000)
+        await $.wait(100)
         // 关注完毕，即将试用
         await doTry(good)
     }
@@ -421,7 +418,7 @@ async function getSuccessList() {
 
 async function showMsg() {
     let message = `京东账号${$.index} ${$.nickName || $.UserName}\n🎉 本次申请：${$.totalTry}/${$.totalGoods}个商品🛒\n🎉 ${$.successList.length}个商品待领取🤩\n🎉 结束原因：${$.stopMsg}`
-    if (!args.jdNotify || args.jdNotify === 'false') {
+    if (!args.jdNotify || args.jdNotify === 'false' || $.totalTry > 0) {
         $.msg($.name, ``, message, {
             "open-url": 'https://try.m.jd.com/user'
         })
