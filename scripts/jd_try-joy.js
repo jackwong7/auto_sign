@@ -178,7 +178,7 @@ function getGoodListByCond(cids, page, pageSize, type, state) {
                     }
                 }
             } catch (e) {
-                reject(`⚠️ ${arguments.callee.name.toString()} API返回结果解析出错\n${e}\n${JSON.stringify(data)}`)
+                reject(`⚠️ ${arguments.callee.name.toString()} API返回结果解析出错\n${e}`)
             } finally {
                 resolve()
             }
@@ -242,7 +242,7 @@ async function getApplyStateByActivityIds() {
                         for (let apply of data) ids.push(apply.activityId)
                     }
                 } catch (e) {
-                    reject(`⚠️ ${arguments.callee.name.toString()} API返回结果解析出错\n${e}\n${JSON.stringify(data)}`)
+                    reject(`⚠️ ${arguments.callee.name.toString()} API返回结果解析出错\n${e}`)
                 } finally {
                     $.goodList = $.goodList.filter(good => {
                         for (let id of ids) {
@@ -284,7 +284,7 @@ function canTry(good) {
                     }
                 }
             } catch (e) {
-                reject(`⚠️ ${arguments.callee.name.toString()} API返回结果解析出错\n${e}\n${JSON.stringify(data)}`)
+                reject(`⚠️ ${arguments.callee.name.toString()} API返回结果解析出错\n${e}`)
             } finally {
                 resolve(ret)
             }
@@ -303,7 +303,7 @@ function isFollowed(good) {
                     resolve(data.success && data.data)
                 }
             } catch (e) {
-                reject(`⚠️ ${arguments.callee.name.toString()} API返回结果解析出错\n${e}\n${JSON.stringify(data)}`)
+                reject(`⚠️ ${arguments.callee.name.toString()} API返回结果解析出错\n${e}`)
             } finally {
                 resolve(false)
             }
@@ -326,7 +326,7 @@ function followShop(good) {
                     resolve(data.success && data.data)
                 }
             } catch (e) {
-                reject(`⚠️ ${arguments.callee.name.toString()} API返回结果解析出错\n${e}\n${JSON.stringify(data)}`)
+                reject(`⚠️ ${arguments.callee.name.toString()} API返回结果解析出错\n${e}`)
             } finally {
                 resolve(false)
             }
@@ -372,7 +372,7 @@ async function doTry(good) {
                     }
                 }
             } catch (e) {
-                reject(`⚠️ ${arguments.callee.name.toString()} API返回结果解析出错\n${e}\n${JSON.stringify(data)}`)
+                reject(`⚠️ ${arguments.callee.name.toString()} API返回结果解析出错\n${e}`)
             } finally {
                 resolve()
             }
@@ -411,7 +411,7 @@ async function getSuccessList() {
                     }
                 }
             } catch (e) {
-                reject(`⚠️ ${arguments.callee.name.toString()} API返回结果解析出错\n${e}\n${JSON.stringify(data)}`)
+                reject(`⚠️ ${arguments.callee.name.toString()} API返回结果解析出错\n${e}`)
             } finally {
                 resolve()
             }
